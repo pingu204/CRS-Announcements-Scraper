@@ -17,7 +17,7 @@ class CRSWebScraper(commands.Cog):
         self.bot = bot
 
     URL = "https://crs.upd.edu.ph/auth/index/announcements"
-    DELAY = 1
+    DELAY = 1   # check every 1 second
 
     async def check(self):
         while(1):
@@ -33,8 +33,8 @@ class CRSWebScraper(commands.Cog):
                 timestamp = datetime.strptime(datetime_str, "%B %d, %Y %H:%M %p")
                 datetime_now = get_dt_now().replace(tzinfo=None)
 
-                if timestamp == datetime_now:
-                    body = announcement.find_all("p")
+                if timestamp <= datetime_now:
+                    body = announcement.find_all("p")[1:]
 
                     dst_guild = discord.utils.get(self.bot.guilds, id=780619726568947723)
                     dst_channel = dst_guild.get_channel(833541236387479573)
