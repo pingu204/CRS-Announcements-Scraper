@@ -1,0 +1,8 @@
+# cache
+__pycache__/
+cogs/__pycache__/
+messages/__pycache__/
+misc/__pycache__/
+
+# env
+.env

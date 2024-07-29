@@ -1,0 +1,1 @@
+crs_post = "📢 {mention}\n# {title}\n**{timestamp}**\n\n{content}"
